@@ -7,6 +7,9 @@
 ## UI
 
 - Running view
+
+<img src="dev/track_work_on_pace.svg" />
+
   - Circular clock in the center with split time
   - Color in background for if you're on pace or not (Green, Yellow, Red)
   - Darkening Color rising to top for progress
