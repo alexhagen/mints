@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "mints",
-    "description": "This project is really great.",
+    "description": "Mobile Interval training.",
     "slug": "mints",
     "privacy": "public",
     "sdkVersion": "24.0.0",
