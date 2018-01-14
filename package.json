@@ -7,11 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "expo": "^24.0.2",
     "react": "16.0.0",
-    "react-native": "0.51.0",
-    "react-native-cli": "^2.0.1",
-    "react-native-location": "^0.27.0",
-    "react-native-sensor-manager": "^0.1.10"
+    "react-native": "github:expo/react-native#sdk-24.0.0",
+    "react-native-cli": "^2.0.1"
   },
   "jest": {
     "preset": "react-native"

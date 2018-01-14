@@ -1,4 +1,7 @@
 {
   "name": "mints",
-  "displayName": "mints"
+  "displayName": "mints",
+  "expo": {
+    "sdkVersion": "24.0.0"
+  }
 }
