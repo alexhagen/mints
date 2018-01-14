@@ -2,17 +2,23 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
-  static initialState = {
-    style: {}
-  };
-  resizeModal(ev) {
-    this.setState({style: {height: ev.nativeEvent.layout.height + 10}});
+  constructor(props) {
+    super(props);
+    this.state = {prog: 0};
+
+    // Toggle the state every second
+    setInterval(() => {
+      this.setState(previousState => {
+        return { prog: previousState.prog + 1 };
+      });
+    }, 1000);
   }
   render() {
+    let prog = this.state.prog + '%';
     return (
       <View style={styles.container}>
         <View style={styles.status}></View>
-        <View style={styles.progress}  onLayout={(ev)=>{this.resizeModal(ev)}}></View>
+        <View style={styles.progress} height={prog}></View>
         <View style={styles.digitalclock}>
           <Text style={styles.laptime}>2:34.15 s</Text>
           <View style={styles.clockrow2}>
