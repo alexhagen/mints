@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {prog: 0};
+    this.state = {prog: 0, statusdark: '#176417', status: '#2f7f2f'};
 
     // Toggle the state every second
     setInterval(() => {
@@ -12,13 +12,19 @@ export default class App extends React.Component {
         return { prog: previousState.prog + 1 };
       });
     }, 1000);
+
+    setInterval(() => {
+      this.setState(previousState => {
+        return { status: '#ff5555', statusdark: '#ff0000'}
+      });
+    }, 5000);
   }
   render() {
     let prog = this.state.prog + '%';
     return (
       <View style={styles.container}>
-        <View style={styles.status}></View>
-        <View style={styles.progress} height={prog}></View>
+        <View style={styles.status} backgroundColor={this.state.status}></View>
+        <View style={styles.progress} height={prog} backgroundColor={this.state.statusdark}></View>
         <View style={styles.digitalclock}>
           <Text style={styles.laptime}>2:34.15 s</Text>
           <View style={styles.clockrow2}>
@@ -44,7 +50,6 @@ const styles = StyleSheet.create({
   },
   status: {
     position: 'absolute',
-    backgroundColor: '#2f7f2f',
     bottom: 0,
     left: 0,
     right: 0,
@@ -52,7 +57,6 @@ const styles = StyleSheet.create({
   },
   progress: {
     position: 'absolute',
-    backgroundColor: '#176417',
     bottom: 0,
     left: 0,
     right: 0,
