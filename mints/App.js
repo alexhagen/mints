@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Image from 'react-native-remote-svg'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.status} backgroundColor={this.state.status}></View>
         <View style={styles.progress} height={prog} backgroundColor={this.state.statusdark}></View>
+        <Image source={require('./img/clockface.svg')} style={styles.clockface} />
         <View style={styles.digitalclock}>
           <Text style={styles.laptime}>2:34.15 s</Text>
           <View style={styles.clockrow2}>
@@ -47,6 +49,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  clockface: {
+    position: 'absolute',
+    width: 350,
+    height: 350
   },
   status: {
     position: 'absolute',
